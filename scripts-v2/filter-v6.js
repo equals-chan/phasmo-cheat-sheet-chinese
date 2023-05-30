@@ -2,6 +2,7 @@ function getCookie(e){let t=e+"=",i=decodeURIComponent(document.cookie).split(";
 function setCookie(e,t,i){let n=new Date;n.setTime(n.getTime()+864e5*i);let o="expires="+n.toUTCString();document.cookie=e+"="+t+";"+o+";path=/"}
 
 const all_evidence = ["DOTs","EMF 5","Fingerprints","Freezing","Ghost Orbs","Writing","Spirit Box"]
+const all_evidence_chinese = ["EMF 5","点阵投影仪","指纹","刺骨寒温","灵球","鬼魂笔记","通灵盒"]
 const all_ghosts = ["Spirit","Wraith","Phantom","Poltergeist","Banshee","Jinn","Mare","Revenant","Shade","Demon","Yurei","Oni","Yokai","Hantu","Goryo","Myling","Onryo","The Twins","Raiju","Obake","The Mimic","Moroi","Deogen","Thaye"]
 const all_speed = ["Slow","Normal","Fast"]
 
@@ -26,7 +27,8 @@ function loadData(){
             evidence_list.innerHTML += `
             <button id="${data.evidence[i]}" class="tricheck white" name="evidence" onclick="tristate(this)" value="${data.evidence[i]}">
                 <div id="checkbox" class="neutral"><span class="icon"></span></div>
-                <div class="label">${data.evidence[i]}</div>
+                <div class="label" style="display: none;" >${data.evidence[i]}</div>
+                <div >${all_evidence_chinese[i]}</div>
             </button>
             `
         }
@@ -102,7 +104,8 @@ function loadData(){
                 evidence_list.innerHTML += `
                 <button id="${data.evidence[i]}" class="tricheck phasfont white" name="evidence" onclick="tristate(this)" value="${data.evidence[i]}">
                     <div id="checkbox" class="neutral"><span class="icon"></span></div>
-                    <div class="label">${data.evidence[i]}</div>
+                    <div class="label">${all_evidence_chinese[i]}</div>
+                    <div class="label" style="display: none;">${data.evidence[i]}</div>
                 </button>
                 `
             }
@@ -723,8 +726,8 @@ function showMaps(){
 
 function flashMode(){
     var cur_evidence = parseInt(document.getElementById("num_evidence").value)
-    var mode_text = ["Apocalypse","Insanity","Nightmare","Professional"][cur_evidence]
-    document.getElementById("game_mode").innerHTML = `${mode_text}<span>(${cur_evidence} evidence)</span>`
+    var mode_text = ["天启","疯狂","噩梦","专家"][cur_evidence]
+    document.getElementById("game_mode").innerHTML = `${mode_text}<span>(${cur_evidence} 个证据)</span>`
     $("#game_mode").fadeIn(500,function () {
         $("#game_mode").delay(500).fadeOut(500);
       });

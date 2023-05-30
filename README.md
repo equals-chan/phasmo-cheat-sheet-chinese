@@ -1,4 +1,26 @@
-# Unofficial Phasmo Cheat Sheet
+# 恐鬼症助手
+
+翻译为中文版，以方便大家使用。
+
+如需要在本地使用，可以 右键chrome浏览器的快捷方式，在目标项最后添加
+
+```
+Chrome.exe"一个空格--allow-file-access-from-files --disable-web-security
+```
+
+以允许浏览器访问本地文件。
+
+
+
+
+
+
+
+
+
+---
+
+
 
 A client facing web-app guide for the horror video game Phasmophobia.
 
